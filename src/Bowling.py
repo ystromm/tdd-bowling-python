@@ -1,2 +1,2 @@
 def score(rolls: [int]):
-    return 0
+    return sum(rolls)
