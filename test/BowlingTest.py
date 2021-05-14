@@ -21,3 +21,11 @@ class BowlingScoreTests(TestCase):
 
     def test_score_with_roll_knocking_down_1_pin_should_be_1(self):
         assert_that(Bowling.score([1])).is_equal_to(1)
+
+    def test_score_with_roll_knocking_down_negative_pins_is_undefined(self):
+        with self.assertRaises(Exception):
+            Bowling.score([-1])
+
+    def test_score_with_roll_knocking_down_more_than_10_pins_is_undefined(self):
+        with self.assertRaises(Exception):
+            Bowling.score([11])
