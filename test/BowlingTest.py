@@ -47,3 +47,12 @@ class BowlingScoreTests(TestCase):
 
     def test_two_strikes_in_a_row_should_get_bonus_from_the_two_following(self):
         assert_that(Bowling.score("XX"+"0"*12)).is_equal_to(30)
+
+    def test_spare_at_the_end_should_get_one_bonus_roll(self):
+        assert_that(Bowling.score("0"*18+"1/1")).is_equal_to(12)
+
+    def strike_at_the_end_should_get_two_bonus_rolls(self):
+        assert_that(Bowling.score("0"*18+"X12")).is_equal_to(13)
+
+    def test_all_strikes_in_a_row_should_score_300(self):
+        assert_that(Bowling.score("X"*12)).is_equal_to(300)
