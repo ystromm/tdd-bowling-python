@@ -118,3 +118,17 @@ All strikes should get 300:
 ```python
 "X"*12
 ```
+
+## Bonus Examples
+
+Strange characters:
+```python
+"1a"+"0"*18
+```
+
+Missing bonus rounds:
+
+```python
+"X"*10
+```
+
