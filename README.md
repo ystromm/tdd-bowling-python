@@ -24,16 +24,31 @@ If a spare is thrown in the final (10th) frame the player is awarded one more ro
 Copied from https://elliotchance.medium.com/kata-the-bowling-game-my-first-attempt-6fce18a85270.
 
 
-## Fluent assertions
+## Structure
 
+````python
+# given 
+rolls = "-"*20
+# when 
+score = Bowling.score(rolls)
+# then
+self.assertEqual(score, 0)
+````
+
+## Assertions
+
+Equality:
 ```python
-assert_that("a"+"bcd").is_not_empty().contains("a").contains("bc")
+self.assertEqual(score, 20)
 ```
-## 
 
-The input is given as a string with numbers '0' through '9' and characters '/' and 'X'. 
+## Examples
 
-If the first roll of a frame knocks down 0 to 9 pins the input is '0', '1', up to '9'.
+The input is given as a string with numbers '1' through '9' and characters'-', '/' and 'X'. 
+
+If a roll does not knock down any pins the input is '-'.
+
+If the first roll of a frame knocks down 1 to 9 pins the input is '1', up to '9'.
 
 If the second roll knocks down all remaining pins this is denoted by '/'. Otherwise the number of pins is given.
 
@@ -44,13 +59,13 @@ If all pins are knocked down in the first roll, a strike, this is denoted by 'X'
 - A game with all misses receives a score of 0.
 
 ```python
-"0"*20
+"-"*20
 ```
 
 - If the first roll knocks down 1 pin the score should be 1.
 
 ```python
-"1"+"0"*19
+"1"+"-"*19
 ```
 
 - If all rolls knocks down 1 pin the score should be 20.
@@ -62,55 +77,55 @@ If all pins are knocked down in the first roll, a strike, this is denoted by 'X'
 - If the first 9 rolls knocks down one more pin each roll the score should be 45.
 
 ```python
-"0123456789"+"0"*10
+"-123456789"+"-"*10
 ```
 
 - A strike in the first roll followed by misses should get 10.
 
 ```python
-"X"+"0"*18
+"X"+"-"*18
 ```
 
 - One pin knocked down and a spare followed by misses should get 10.
 
 ```python
-"1/"+"0"*18
+"1/"+"-"*18
 ```
 
 - Two pins and a spare in the first frame followed by misses should get 10.
 
 ```python
-"2/"+"0"*18
+"2/"+"-"*18
 ```
 
 - Two pins and a spare followed by one pin should get bonus 12.
 
 ```python
-"2/1"+"0"*17
+"2/1"+"-"*17
 ```
 
 - Strike should get bonus from the two following, 16.
 
 ```python
-"X21"+"0"*16
+"X21"+"-"*16
 ```
 
 Two strikes should get 30:
 
 ```python
-"XX"+ "0"*16
+"XX"+ "-"*16
 ```
 
 A spare at the end should get one bonus roll, 11.
 
 ```python
-"0"*18+"1/1"
+"-"*18+"1/1"
 ```
 
 A strike at the end should get two bonus rolls, 13.
 
 ```python
-"0"*18+"X12"
+"-"*18+"X12"
 ```
 
 All strikes should get 300:
