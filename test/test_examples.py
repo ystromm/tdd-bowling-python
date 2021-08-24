@@ -1,7 +1,8 @@
+import unittest
 from unittest import TestCase
-from assertpy import assert_that
+
 import pytest
-import Bowling
+from assertpy import assert_that
 
 
 class SomeError(Exception):
@@ -39,3 +40,7 @@ class ExampleTests(TestCase):
     def test_should_also_raise_an_error(self):
         with self.assertRaises(SomeError):
             raises_some_error()
+
+
+if __name__ == '__main__':
+    unittest.main()

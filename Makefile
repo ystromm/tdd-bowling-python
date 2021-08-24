@@ -1,7 +1,7 @@
 SHELL=bash
 
 venv: requirements-dev.txt
-	(python3.8 -m venv venv && \
+	(python3 -m venv venv && \
     . ./venv/bin/activate && \
     pip3 install -r requirements-dev.txt)
 
@@ -9,7 +9,10 @@ setup: venv
 
 .PHONY: test
 test: setup
-	@ . venv/bin/activate && PYTHONPATH=src pytest test && flake8 src --exclude '#*,~*,.#*'
+	@ . venv/bin/activate && PYTHONPATH=./src pytest -s test ./src
+
+ # 	@ . venv/bin/activate && PYTHONPATH=./src pytest -s test --cov ./src/magento/ --no-cov-on-fail --cov-report term-missing
+
 
 clean:
 	rm -rf venv
