@@ -75,10 +75,10 @@ If all pins are knocked down in the first roll, a strike, this is denoted by 'X'
 "1"*20
 ```
 
-- If the first 9 rolls knocks down one more pin each roll the score should be 45.
+- If the first roll knocks down 1 and the second 2 pins you should get 3 points.
 
 ```python
-"-123456789"+"-"*10
+"12"+"-"*18
 ```
 
 - A strike in the first roll followed by misses should get 10.
