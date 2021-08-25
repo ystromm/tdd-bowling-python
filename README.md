@@ -105,7 +105,7 @@ If all pins are knocked down in the first roll, a strike, this is denoted by 'X'
 "2/1"+"-"*17
 ```
 
-- Strike should get bonus from the two following, 13.
+- Strike should get bonus from the two following, 16.
 
 ```python
 "X21"+"-"*16
