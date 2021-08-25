@@ -29,8 +29,9 @@ Copied from https://elliotchance.medium.com/kata-the-bowling-game-my-first-attem
 ````python
 # given 
 rolls = "-"*20
+bowling = Bowling()
 # when 
-score = Bowling.score(rolls)
+score = bowling.score(rolls)
 # then
 self.assertEqual(score, 0)
 ````
