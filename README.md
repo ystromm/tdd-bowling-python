@@ -111,7 +111,7 @@ If all pins are knocked down in the first roll, a strike, this is denoted by 'X'
 "X21"+"-"*16
 ```
 
-Two strikes should get 30:
+Two strikes should get 20:
 
 ```python
 "XX"+ "-"*16
