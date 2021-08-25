@@ -99,7 +99,7 @@ If all pins are knocked down in the first roll, a strike, this is denoted by 'X'
 "2/"+"-"*18
 ```
 
-- Two pins and a spare followed by one pin should get bonus 12.
+- Two pins and a spare followed by one pin should get bonus 11.
 
 ```python
 "2/1"+"-"*17
