@@ -3,9 +3,9 @@ Bowling scoring TDD kata
 
 ## Test Driven Development
 
-- Write a failing test
-- Make the test pass in a simple way
-- Refactor
+- Write a failing test 🔴
+- Make the test pass in a simple way 🟢 
+- Refactor (naming, duplication, complexity, ...) 🟡
 - Start over
 
 ## Requirements for bowling scoring
@@ -38,9 +38,19 @@ self.assertEqual(score, 0)
 
 ## Assertions
 
-Equality:
+Equality in [unittest](https://docs.python.org/3/library/unittest.html):
 ```python
 self.assertEqual(score, 20)
+```
+
+Equality [pytest](https://docs.pytest.org/en/7.1.x/contents.html) style:
+```python
+assert score == 20
+```
+
+Equality [assertpy](https://github.com/assertpy/assertpy) style:
+```python
+assert_that(score).is_near(20)
 ```
 
 ## Examples

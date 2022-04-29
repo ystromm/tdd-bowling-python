@@ -4,15 +4,7 @@ from unittest import TestCase
 import pytest
 from assertpy import assert_that
 
-
-class SomeError(Exception):
-    def __init__(self, message):
-        self.message = message
-
-
-def raises_some_error():
-    raise SomeError("Everything is borken")
-
+from test.error import SomeError, raises_some_error
 
 class ExampleTests(TestCase):
     def test_1_minus_1_should_return_0(self):
